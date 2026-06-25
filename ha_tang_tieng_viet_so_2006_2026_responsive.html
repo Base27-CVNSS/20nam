@@ -1,0 +1,1201 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#06172f" />
+  <title>Hạ tầng tiếng Việt số 2006–2026 | Deep + Agentic + Structural</title>
+  <style>
+    :root{
+      --bg:#06172f;
+      --bg2:#0b2447;
+      --panel:#0f2f57;
+      --panel2:#102b4c;
+      --text:#f5f9ff;
+      --muted:#b9c8dd;
+      --line:rgba(255,255,255,.16);
+      --card:rgba(255,255,255,.08);
+      --card2:rgba(255,255,255,.12);
+      --accent:#ffd34d;
+      --blue:#45a3ff;
+      --cyan:#42e8e0;
+      --green:#5ee28c;
+      --orange:#ff9e3d;
+      --red:#ff6262;
+      --purple:#bf7bff;
+      --pink:#ff6fb1;
+      --shadow:0 20px 70px rgba(0,0,0,.32);
+      --radius:22px;
+      --radius2:16px;
+      --max:1280px;
+      --focus:0 0 0 4px rgba(255,211,77,.28);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(69,163,255,.34), transparent 34rem),
+        radial-gradient(circle at 88% 8%, rgba(191,123,255,.26), transparent 34rem),
+        radial-gradient(circle at 50% 95%, rgba(66,232,224,.16), transparent 32rem),
+        linear-gradient(180deg, #051226 0%, #081b35 42%, #06172f 100%);
+      min-height:100vh;
+      line-height:1.55;
+    }
+
+    a{color:inherit}
+    .skip{
+      position:absolute;
+      left:-999px;
+      top:0;
+      padding:.8rem 1rem;
+      background:#fff;
+      color:#06172f;
+      border-radius:0 0 12px 0;
+      z-index:9999;
+    }
+    .skip:focus{left:0; outline:none}
+
+    .wrap{
+      width:min(var(--max), calc(100% - 28px));
+      margin-inline:auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter: blur(18px);
+      background:rgba(5,18,38,.78);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      min-height:68px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:.75rem;
+      min-width:0;
+      font-weight:900;
+      letter-spacing:.2px;
+    }
+    .brand-mark{
+      width:42px;
+      height:42px;
+      display:grid;
+      place-items:center;
+      border-radius:14px;
+      color:#06172f;
+      background:linear-gradient(135deg, var(--accent), #fff0a6);
+      box-shadow:0 12px 32px rgba(255,211,77,.22);
+      flex:0 0 auto;
+    }
+    .brand small{
+      display:block;
+      color:var(--muted);
+      font-weight:650;
+      letter-spacing:0;
+      margin-top:-.1rem;
+    }
+
+    .nav{
+      display:flex;
+      gap:.5rem;
+      align-items:center;
+      overflow:auto;
+      scrollbar-width:none;
+      padding-block:.6rem;
+    }
+    .nav::-webkit-scrollbar{display:none}
+    .nav a{
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:750;
+      white-space:nowrap;
+      padding:.62rem .82rem;
+      border:1px solid transparent;
+      border-radius:999px;
+      font-size:.92rem;
+    }
+    .nav a:hover,.nav a:focus-visible{
+      color:var(--text);
+      border-color:var(--line);
+      background:rgba(255,255,255,.08);
+      outline:none;
+      box-shadow:var(--focus);
+    }
+
+    .hero{
+      padding: clamp(34px, 6vw, 78px) 0 26px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.06fr .94fr;
+      gap: clamp(18px, 3vw, 36px);
+      align-items:center;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      color:#06172f;
+      background:linear-gradient(135deg, var(--accent), #fff0a6);
+      border-radius:999px;
+      padding:.5rem .8rem;
+      font-weight:950;
+      box-shadow:0 14px 42px rgba(255,211,77,.18);
+      margin-bottom:1rem;
+    }
+    h1{
+      margin:0;
+      font-size: clamp(2.15rem, 5.5vw, 5.2rem);
+      line-height:.98;
+      letter-spacing:-.055em;
+    }
+    .hero p{
+      color:var(--muted);
+      font-size: clamp(1.02rem, 1.45vw, 1.24rem);
+      max-width:74ch;
+      margin:1.25rem 0 0;
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.75rem;
+      margin-top:1.55rem;
+    }
+    .btn{
+      appearance:none;
+      border:none;
+      border-radius:999px;
+      padding:.9rem 1.1rem;
+      font-weight:900;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;
+      gap:.55rem;
+      align-items:center;
+      justify-content:center;
+      min-height:44px;
+    }
+    .btn-primary{
+      color:#06172f;
+      background:linear-gradient(135deg, var(--accent), #fff0a6);
+    }
+    .btn-ghost{
+      color:var(--text);
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.08);
+    }
+    .btn:focus-visible{outline:none; box-shadow:var(--focus)}
+
+    .hero-card{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.13), rgba(255,255,255,.055));
+      border-radius:var(--radius);
+      padding: clamp(18px, 3vw, 28px);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:-70px -40px auto auto;
+      width:190px;
+      height:190px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(66,232,224,.26), transparent 65%);
+      pointer-events:none;
+    }
+    .triad{
+      display:grid;
+      gap:.85rem;
+      position:relative;
+      z-index:1;
+    }
+    .triad-item{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.08);
+      border-radius:18px;
+      padding:1rem;
+      display:grid;
+      grid-template-columns:48px 1fr;
+      gap:.9rem;
+      align-items:center;
+    }
+    .triad-icon{
+      width:48px;
+      height:48px;
+      display:grid;
+      place-items:center;
+      border-radius:16px;
+      color:#06172f;
+      font-size:1.4rem;
+      font-weight:950;
+    }
+    .triad-item h3{margin:.05rem 0 .15rem; font-size:1.06rem}
+    .triad-item p{margin:0; color:var(--muted); font-size:.95rem}
+    .deep .triad-icon{background:linear-gradient(135deg, var(--blue), #bde1ff)}
+    .agent .triad-icon{background:linear-gradient(135deg, var(--green), #cbffd9)}
+    .struct .triad-icon{background:linear-gradient(135deg, var(--orange), #ffe0b6)}
+
+    section{padding:34px 0}
+    .section-title{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:1rem;
+      margin-bottom:1.1rem;
+    }
+    .section-title h2{
+      margin:0;
+      font-size: clamp(1.55rem, 3vw, 2.35rem);
+      line-height:1.05;
+      letter-spacing:-.035em;
+    }
+    .section-title p{
+      margin:.35rem 0 0;
+      color:var(--muted);
+      max-width:72ch;
+    }
+
+    .timeline{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:1rem;
+    }
+    .phase{
+      border:1px solid var(--line);
+      border-radius:var(--radius2);
+      padding:1rem;
+      background:rgba(255,255,255,.075);
+      position:relative;
+      overflow:hidden;
+      min-height:150px;
+    }
+    .phase::before{
+      content:"";
+      position:absolute;
+      inset:0 0 auto;
+      height:5px;
+      background:var(--phase, var(--accent));
+    }
+    .phase .year{
+      color:var(--phase, var(--accent));
+      font-weight:950;
+      font-size:1.15rem;
+    }
+    .phase h3{margin:.4rem 0 .35rem; font-size:1.03rem}
+    .phase p{margin:0; color:var(--muted); font-size:.94rem}
+
+    .spotlights{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:1rem;
+      margin-top:1rem;
+    }
+    .spot{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:1.1rem;
+      background:linear-gradient(180deg, rgba(255,255,255,.13), rgba(255,255,255,.055));
+      box-shadow:0 14px 46px rgba(0,0,0,.18);
+      position:relative;
+      overflow:hidden;
+    }
+    .spot::after{
+      content:"";
+      position:absolute;
+      inset:auto -70px -90px auto;
+      width:210px;
+      height:210px;
+      border-radius:50%;
+      background:radial-gradient(circle, var(--glow, rgba(69,163,255,.22)), transparent 65%);
+      pointer-events:none;
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:.45rem;
+      padding:.42rem .68rem;
+      border-radius:999px;
+      color:#06172f;
+      background:var(--tagbg, var(--accent));
+      font-weight:950;
+      font-size:.88rem;
+      margin-bottom:.8rem;
+    }
+    .spot h3{margin:0 0 .55rem; font-size:1.28rem}
+    .spot p{margin:.45rem 0; color:var(--muted)}
+    .mini-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.5rem;
+      margin-top:.8rem;
+    }
+    .chip{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.08);
+      border-radius:999px;
+      padding:.42rem .65rem;
+      color:#eaf3ff;
+      font-weight:750;
+      font-size:.88rem;
+    }
+
+    .toolbar{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.75rem;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:1rem;
+      border:1px solid var(--line);
+      border-radius:var(--radius2);
+      padding:.8rem;
+      background:rgba(255,255,255,.06);
+    }
+    .search{
+      flex:1 1 260px;
+      min-width:0;
+      display:flex;
+      align-items:center;
+      gap:.55rem;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.08);
+      border-radius:999px;
+      padding:.55rem .75rem;
+    }
+    .search input{
+      width:100%;
+      border:0;
+      outline:0;
+      background:transparent;
+      color:var(--text);
+      font:inherit;
+    }
+    .search input::placeholder{color:#8fa4bf}
+    .filters{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.45rem;
+    }
+    .filter{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.08);
+      color:var(--text);
+      border-radius:999px;
+      padding:.48rem .7rem;
+      cursor:pointer;
+      font-weight:850;
+      font-size:.88rem;
+    }
+    .filter[aria-pressed="true"]{
+      color:#06172f;
+      background:var(--accent);
+      border-color:transparent;
+    }
+
+    .matrix{
+      display:grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap:1rem;
+    }
+    .layer-card{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.075);
+      overflow:hidden;
+      min-height:270px;
+      display:flex;
+      flex-direction:column;
+      box-shadow:0 14px 44px rgba(0,0,0,.16);
+    }
+    .layer-head{
+      padding:1rem;
+      background:linear-gradient(135deg, var(--c1), var(--c2));
+      color:#06172f;
+      min-height:104px;
+    }
+    .layer-num{
+      display:inline-grid;
+      place-items:center;
+      width:38px;
+      height:38px;
+      border-radius:14px;
+      background:rgba(255,255,255,.55);
+      font-weight:1000;
+      margin-bottom:.72rem;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.3);
+    }
+    .layer-head h3{
+      margin:0;
+      line-height:1.04;
+      letter-spacing:-.025em;
+      font-size:1.15rem;
+    }
+    .layer-body{
+      padding:1rem;
+      display:flex;
+      flex-direction:column;
+      gap:.8rem;
+      flex:1;
+    }
+    .role{
+      color:var(--muted);
+      margin:0;
+      font-size:.94rem;
+    }
+    .resources{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.45rem;
+      margin-top:auto;
+    }
+    .resource{
+      font-size:.82rem;
+      font-weight:820;
+      color:#06172f;
+      background:rgba(255,255,255,.88);
+      border-radius:999px;
+      padding:.35rem .55rem;
+    }
+    .open-detail{
+      width:100%;
+      margin-top:.25rem;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:rgba(255,255,255,.08);
+      color:var(--text);
+      min-height:40px;
+      cursor:pointer;
+      font-weight:900;
+    }
+    .open-detail:focus-visible{outline:none; box-shadow:var(--focus)}
+
+    .details{
+      display:grid;
+      gap:1rem;
+    }
+    details{
+      border:1px solid var(--line);
+      border-radius:var(--radius2);
+      background:rgba(255,255,255,.07);
+      overflow:hidden;
+    }
+    summary{
+      cursor:pointer;
+      padding:1rem;
+      font-weight:950;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    summary::after{
+      content:"+";
+      font-size:1.4rem;
+      color:var(--accent);
+      flex:0 0 auto;
+    }
+    details[open] summary::after{content:"–"}
+    .detail-content{
+      padding:0 1rem 1rem;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+    }
+    .detail-content strong{color:#fff}
+    .detail-content ul{
+      padding-left:1.1rem;
+      margin:.7rem 0 0;
+    }
+
+    .blueprint{
+      display:grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap:.8rem;
+      align-items:stretch;
+    }
+    .pillar{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.075);
+      padding:1.1rem;
+      min-height:210px;
+    }
+    .pillar h3{margin:.2rem 0 .55rem; font-size:1.18rem}
+    .pillar p{color:var(--muted); margin:0}
+    .arrow{
+      display:grid;
+      place-items:center;
+      color:var(--accent);
+      font-size:2rem;
+      font-weight:1000;
+    }
+    .unify{
+      margin-top:1rem;
+      border:1px solid rgba(255,211,77,.36);
+      border-radius:var(--radius);
+      padding:1rem;
+      background:linear-gradient(135deg, rgba(255,211,77,.16), rgba(255,255,255,.05));
+      display:grid;
+      grid-template-columns: minmax(0,1fr) auto;
+      gap:1rem;
+      align-items:center;
+    }
+    .unify h3{margin:0 0 .25rem; font-size:1.35rem}
+    .unify p{margin:0; color:var(--muted)}
+    .badge-big{
+      border-radius:999px;
+      padding:.8rem 1rem;
+      background:var(--accent);
+      color:#06172f;
+      font-weight:1000;
+      text-align:center;
+      white-space:nowrap;
+    }
+
+    .pipeline{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.55rem;
+      align-items:center;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:1rem;
+      background:rgba(255,255,255,.07);
+    }
+    .step{
+      padding:.58rem .78rem;
+      border-radius:999px;
+      color:#06172f;
+      background:#fff;
+      font-weight:950;
+      font-size:.9rem;
+    }
+    .pipe-arrow{color:var(--accent); font-weight:1000}
+
+    .source-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:.8rem;
+    }
+    .source{
+      border:1px solid var(--line);
+      border-radius:var(--radius2);
+      padding:.9rem;
+      background:rgba(255,255,255,.065);
+      color:var(--muted);
+      min-height:88px;
+    }
+    .source b{display:block; color:#fff; margin-bottom:.22rem}
+    .source a{
+      color:#bfe6ff;
+      word-break:break-word;
+      font-size:.9rem;
+      text-decoration:none;
+    }
+    .source a:hover{text-decoration:underline}
+
+    footer{
+      padding:28px 0 44px;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+      margin-top:28px;
+    }
+
+    @media (max-width: 1120px){
+      .matrix{grid-template-columns: repeat(3, minmax(0,1fr))}
+      .hero-grid{grid-template-columns:1fr}
+      .source-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width: 820px){
+      .topbar-inner{align-items:flex-start; flex-direction:column; padding:.7rem 0 .45rem}
+      .brand{width:100%}
+      .nav{width:100%}
+      .timeline{grid-template-columns:1fr 1fr}
+      .spotlights{grid-template-columns:1fr}
+      .matrix{grid-template-columns: repeat(2, minmax(0,1fr))}
+      .blueprint{grid-template-columns:1fr}
+      .arrow{transform:rotate(90deg); min-height:30px}
+      .unify{grid-template-columns:1fr}
+      .badge-big{white-space:normal}
+    }
+    @media (max-width: 560px){
+      .wrap{width:min(100% - 18px, var(--max))}
+      .hero{padding-top:24px}
+      .matrix{grid-template-columns:1fr}
+      .timeline{grid-template-columns:1fr}
+      .source-grid{grid-template-columns:1fr}
+      .toolbar{align-items:stretch}
+      .filters{overflow:auto; flex-wrap:nowrap; padding-bottom:.1rem}
+      .filter{white-space:nowrap}
+      .section-title{display:block}
+      .triad-item{grid-template-columns:42px 1fr}
+      .triad-icon{width:42px;height:42px}
+      .layer-card{min-height:auto}
+    }
+
+    @media (prefers-reduced-motion: no-preference){
+      .layer-card,.phase,.spot,.pillar{transition:transform .2s ease, background .2s ease, border-color .2s ease}
+      .layer-card:hover,.phase:hover,.spot:hover,.pillar:hover{
+        transform:translateY(-3px);
+        background:rgba(255,255,255,.105);
+        border-color:rgba(255,255,255,.28);
+      }
+    }
+
+    @media print{
+      body{background:#fff;color:#111}
+      .topbar,.toolbar,.open-detail,.hero-actions{display:none!important}
+      .wrap{width:100%}
+      .hero-card,.layer-card,.phase,.spot,details,.pillar,.unify,.pipeline,.source{
+        background:#fff!important;
+        color:#111!important;
+        box-shadow:none!important;
+        border-color:#bbb!important;
+      }
+      .role,.detail-content,.phase p,.hero p,.spot p,.pillar p,footer{color:#333!important}
+      .layer-head{color:#111!important}
+      details{break-inside:avoid}
+      details:not([open]) .detail-content{display:block}
+      summary::after{display:none}
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#main">Bỏ qua menu và tới nội dung chính</a>
+
+  <header class="topbar" aria-label="Thanh điều hướng">
+    <div class="wrap topbar-inner">
+      <div class="brand" aria-label="Hạ tầng tiếng Việt số">
+        <div class="brand-mark" aria-hidden="true">VI</div>
+        <div>
+          Hạ tầng tiếng Việt số
+          <small>Chuẩn 20 năm 2006–2026</small>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Điều hướng nội dung">
+        <a href="#timeline">20 năm</a>
+        <a href="#spotlight">2 lớp bổ sung</a>
+        <a href="#matrix">10 lớp</a>
+        <a href="#details">Phân tích</a>
+        <a href="#strategy">Hợp nhất</a>
+        <a href="#sources">Nguồn</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">✦ Deep + Agentic + Structural</div>
+          <h1>Chiến lược 20 năm xây dựng hạ tầng tiếng Việt số</h1>
+          <p>
+            Từ 2006 đến 2026, tiếng Việt số không chỉ cần VTB/VCor. Hạ tầng đầy đủ phải kết nối
+            corpus thô lớn, treebank, benchmark, toolkits, mô hình nền, dữ liệu suy luận, văn bản nhiễu,
+            giọng nói, từ điển/ngữ nghĩa và tầng kiểm toán/IR như CVNSS4.0.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#matrix">Xem ma trận 10 lớp</a>
+            <a class="btn btn-ghost" href="#strategy">Xem mô hình hợp nhất</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Ba hướng hợp nhất">
+          <div class="triad">
+            <div class="triad-item deep">
+              <div class="triad-icon" aria-hidden="true">D</div>
+              <div>
+                <h3>Mô hình sâu</h3>
+                <p>Học biểu diễn: encoder, decoder, embedding, LLM, reranker.</p>
+              </div>
+            </div>
+            <div class="triad-item agent">
+              <div class="triad-icon" aria-hidden="true">A</div>
+              <div>
+                <h3>Agentic loop</h3>
+                <p>Làm sạch dữ liệu, mở rộng corpus, active learning, human-in-the-loop.</p>
+              </div>
+            </div>
+            <div class="triad-item struct">
+              <div class="triad-icon" aria-hidden="true">S</div>
+              <div>
+                <h3>Structural grammar</h3>
+                <p>Kiểm chứng nghĩa: dependency, semantic role, Pregroup, DisCoCat, logic.</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="timeline">
+      <div class="wrap">
+        <div class="section-title">
+          <div>
+            <h2>Timeline 2006–2026</h2>
+            <p>Bốn pha phát triển chính: từ tài nguyên nền, công cụ xử lý, mô hình Transformer đến hạ tầng kiểm chứng cho AI tiếng Việt.</p>
+          </div>
+        </div>
+        <div class="timeline">
+          <article class="phase" style="--phase:var(--green)">
+            <div class="year">2006–2012</div>
+            <h3>Tài nguyên & chuẩn hóa ban đầu</h3>
+            <p>Corpus, từ điển, tách từ, POS, các treebank đầu tiên, hình thành nhu cầu benchmark cộng đồng.</p>
+          </article>
+          <article class="phase" style="--phase:var(--cyan)">
+            <div class="year">2013–2018</div>
+            <h3>VLSP & pipeline</h3>
+            <p>Shared tasks, VnCoreNLP, RDRSegmenter, dependency parsing, NER và các công cụ dùng được trong ứng dụng.</p>
+          </article>
+          <article class="phase" style="--phase:var(--purple)">
+            <div class="year">2019–2022</div>
+            <h3>Transformer tiếng Việt</h3>
+            <p>PhoBERT, ViT5, các mô hình tiền huấn luyện, bước chuyển từ feature engineering sang representation learning.</p>
+          </article>
+          <article class="phase" style="--phase:var(--orange)">
+            <div class="year">2023–2026</div>
+            <h3>LLM, RAG, IR & kiểm chứng</h3>
+            <p>Đòi hỏi dữ liệu đa miền, social/noisy text, speech, NLI pháp lý, audit, data card và CVNSS4.0 IR.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="spotlight">
+      <div class="wrap">
+        <div class="section-title">
+          <div>
+            <h2>Hai lớp bổ sung cần đưa lên hàng đầu</h2>
+            <p>Đây là 2 “tag/tab” quan trọng để UI không chỉ nhìn như poster, mà còn thể hiện rõ logic hạ tầng: dữ liệu thô lớn và cú pháp sâu.</p>
+          </div>
+        </div>
+        <div class="spotlights">
+          <article class="spot" style="--glow:rgba(94,226,140,.22); --tagbg:var(--green)">
+            <div class="tag">Tag 01 · Corpus thô lớn</div>
+            <h3>Tiền huấn luyện LLM, thống kê từ vựng, embedding</h3>
+            <p>
+              Đây là lớp nhiên liệu cho mô hình nền. Cần Wikipedia tiếng Việt, OSCAR/CC, news corpus,
+              web crawl sạch, tài liệu giáo dục, hành chính và dữ liệu miền đã xử lý bản quyền.
+            </p>
+            <div class="mini-list" aria-label="Nguồn corpus thô lớn">
+              <span class="chip">Wikipedia tiếng Việt</span>
+              <span class="chip">OSCAR/CC</span>
+              <span class="chip">News corpus</span>
+              <span class="chip">Web crawl sạch</span>
+            </div>
+          </article>
+
+          <article class="spot" style="--glow:rgba(66,232,224,.22); --tagbg:var(--cyan)">
+            <div class="tag">Tag 02 · Treebank/Cú pháp</div>
+            <h3>Nền bắt buộc cho parser, Pregroup và DisCoCat</h3>
+            <p>
+              Ngoài VTB/VCor, cần đưa VnDT, UD Vietnamese VTB và BKTreebank vào lõi hạ tầng.
+              Đây là lớp cho POS, dependency, parser, semantic role, Pregroup type và DisCoCat.
+            </p>
+            <div class="mini-list" aria-label="Nguồn treebank/cú pháp">
+              <span class="chip">VnDT</span>
+              <span class="chip">UD Vietnamese VTB</span>
+              <span class="chip">BKTreebank</span>
+              <span class="chip">Dependency gold</span>
+              <span class="chip">UD mapping</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="matrix">
+      <div class="wrap">
+        <div class="section-title">
+          <div>
+            <h2>Ma trận 10 lớp hạ tầng</h2>
+            <p>Lọc nhanh theo nhóm hoặc tìm theo tên tài nguyên như PhoBERT, VnDT, ViLexNorm, PhoWhisper, CVNSS4.0.</p>
+          </div>
+        </div>
+
+        <div class="toolbar" aria-label="Bộ lọc ma trận">
+          <label class="search">
+            <span aria-hidden="true">🔎</span>
+            <input id="searchInput" type="search" placeholder="Tìm lớp, vai trò, tài nguyên..." autocomplete="off" />
+          </label>
+          <div class="filters" role="group" aria-label="Nhóm lọc">
+            <button class="filter" data-filter="all" aria-pressed="true">Tất cả</button>
+            <button class="filter" data-filter="data" aria-pressed="false">Dữ liệu</button>
+            <button class="filter" data-filter="tool" aria-pressed="false">Công cụ</button>
+            <button class="filter" data-filter="model" aria-pressed="false">Mô hình</button>
+            <button class="filter" data-filter="reasoning" aria-pressed="false">Suy luận</button>
+            <button class="filter" data-filter="speech" aria-pressed="false">Giọng nói</button>
+            <button class="filter" data-filter="audit" aria-pressed="false">Audit/IR</button>
+          </div>
+        </div>
+
+        <div class="matrix" id="layerGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="details">
+      <div class="wrap">
+        <div class="section-title">
+          <div>
+            <h2>Phân tích theo lớp</h2>
+            <p>Các khối nội dung dài được đưa vào accordion để đọc tốt trên điện thoại, tránh một trang quá dày chữ.</p>
+          </div>
+        </div>
+
+        <div class="details">
+          <details open id="detail-treebank">
+            <summary>2. Nhóm treebank và cú pháp: nền bắt buộc cho parser, Pregroup, DisCoCat</summary>
+            <div class="detail-content">
+              <p>
+                <strong>VnDT</strong> cần đưa vào lõi hạ tầng vì đây là Vietnamese Dependency Treebank công khai,
+                có bản chia train/dev/test để huấn luyện và đánh giá dependency parser. VnDT không chỉ cho biết
+                “từ nào là danh từ/động từ”, mà cho biết <strong>từ nào phụ thuộc vào từ nào</strong>. Từ đó mới đi tiếp
+                sang semantic role, Pregroup type và DisCoCat.
+              </p>
+              <p>
+                <strong>UD Vietnamese VTB</strong> là lớp kết nối tiếng Việt với chuẩn quốc tế Universal Dependencies.
+                Lớp này giúp tiếng Việt so sánh được với các ngôn ngữ khác theo cùng hệ nhãn UPOS/DEPREL, đồng thời
+                thuận lợi cho huấn luyện parser đa ngữ.
+              </p>
+              <p>
+                <strong>BKTreebank</strong> là tài nguyên bổ sung cho dependency parsing, hữu ích khi cần so sánh nhiều
+                scheme cú pháp hoặc xây audit-set cho parser.
+              </p>
+              <ul>
+                <li>Muốn đi vào Pregroup/DisCoCat, không thể chỉ có corpus thô.</li>
+                <li>Cần dependency gold, UD mapping, verb frame, nmod role, compound predicate và arity annotation.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>3. VLSP: trục benchmark cộng đồng</summary>
+            <div class="detail-content">
+              <p>
+                <strong>VLSP</strong> là nền tảng cộng đồng quan trọng vì tổ chức shared tasks và tạo gold datasets
+                cho nhiều bài toán: NER, sentiment, dependency, ASR, TTS, hate speech. Vai trò của VLSP không chỉ là
+                “có dữ liệu”, mà là tạo mặt bằng đánh giá chung.
+              </p>
+              <p>
+                Nếu không có benchmark chung, mỗi nhóm sẽ tự chia dữ liệu, tự báo cáo điểm, dẫn đến khó tái lập.
+                Trong hạ tầng tiếng Việt số, VLSP nên đóng vai trò như “evaluation authority”: split chuẩn,
+                metric chuẩn, leaderboard, data use agreement và mô tả lỗi.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>4. Toolkits: từ tách từ đến parser</summary>
+            <div class="detail-content">
+              <p>
+                <strong>VnCoreNLP</strong> cung cấp pipeline đầy đủ: word segmentation, POS tagging, NER và dependency parsing.
+                <strong>RDRSegmenter</strong> là công cụ tách từ quan trọng. <strong>PhoNLP</strong> là toolkit multi-task
+                theo hướng học sâu. <strong>Underthesea</strong> và <strong>PyVi</strong> quan trọng cho giáo dục,
+                prototype và ứng dụng Python nhanh.
+              </p>
+              <p>
+                Tách từ là vấn đề sống còn với tiếng Việt: nếu tách từ sai, POS, NER, dependency và embedding đều sai dây chuyền.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>5. Mô hình nền: PhoBERT, ViT5 và mô hình sinh</summary>
+            <div class="detail-content">
+              <p>
+                <strong>PhoBERT</strong> là mốc then chốt của tiếng Việt trong kỷ nguyên Transformer, mạnh cho hiểu và mã hóa ngữ nghĩa.
+                <strong>ViT5</strong> bổ sung phía encoder–decoder/text-to-text, phù hợp cho tóm tắt, sinh văn bản, chuyển đổi dạng câu
+                và NER theo hướng generation.
+              </p>
+              <p>
+                Hạ tầng tương lai cần thêm embedding model, reranker, instruction-tuned LLM, domain LLM và RAG benchmark cho tiếng Việt.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>6. Đọc hiểu, NLI và suy luận: nền cho AI có kiểm chứng</summary>
+            <div class="detail-content">
+              <p>
+                <strong>UIT-ViQuAD</strong> phục vụ hỏi đáp/đọc hiểu. <strong>ViNLI</strong> và <strong>ViANLI</strong>
+                phục vụ suy luận ngôn ngữ tự nhiên. <strong>ViLegalNLI</strong> đặc biệt quan trọng cho hướng pháp luật,
+                hành chính và kiểm chứng văn bản quy phạm.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>7. Văn bản mạng xã hội và dữ liệu nhiễu</summary>
+            <div class="detail-content">
+              <p>
+                Tiếng Việt thực tế có không dấu, sai dấu, viết tắt, teencode, emoji, trộn Anh–Việt và biến thể vùng miền.
+                <strong>ViLexNorm</strong> và <strong>ViSoLex</strong> là lớp then chốt để chuẩn hóa lexical noise.
+              </p>
+              <p>
+                Đây là nơi CVNSS4.0 có thể làm IR truy vết sai dấu/không dấu/biến thể âm tiết trước khi đưa vào tokenizer hoặc LLM.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>8. Speech: ASR, TTS, voice agent</summary>
+            <div class="detail-content">
+              <p>
+                Hạ tầng tiếng Việt số không thể thiếu giọng nói. <strong>VIVOS</strong> là corpus ASR học thuật.
+                <strong>VLSP ASR/TTS</strong> tạo benchmark cộng đồng. <strong>PhoWhisper</strong> phục vụ ASR tiếng Việt đa vùng miền.
+                <strong>VietSuperSpeech</strong> bổ sung giọng nói hội thoại. <strong>PhoAudiobook</strong> bổ sung hướng TTS/zero-shot TTS.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>9. Lexicon/Semantic: từ điển, WordNet, sentiment, Hán-Nôm</summary>
+            <div class="detail-content">
+              <p>
+                Neural model không thay thế hoàn toàn lớp lexical–semantic. Cần Vietnamese WordNet, VietSentiWordNet,
+                Hán-Nôm digital library, từ điển thuật ngữ, đồng nghĩa/trái nghĩa, trường nghĩa và tài nguyên di sản.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>10. Audit/IR/chuẩn hóa: chỗ đứng của CVNSS4.0</summary>
+            <div class="detail-content">
+              <p>
+                CVNSS4.0 nên đứng đúng vai trò: không thay VTB/VCor, không thay Unicode, không thay PhoBERT,
+                mà làm tầng <strong>IR/codec/audit</strong> cho tiếng Việt.
+              </p>
+              <p>
+                Lớp này phục vụ Unicode NFC, trace encode/decode, data card, model card, hash, gold/silver/bronze,
+                quality gate và kiểm toán lỗi trước khi đưa vào NLP/LLM/RAG.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="strategy">
+      <div class="wrap">
+        <div class="section-title">
+          <div>
+            <h2>Mô hình hợp nhất đúng hướng</h2>
+            <p>Không chọn một trong ba. Hạ tầng tiếng Việt số phải hợp nhất mô hình sâu, vòng lặp agentic và ngữ pháp cấu trúc.</p>
+          </div>
+        </div>
+
+        <div class="blueprint" aria-label="Ba trụ hợp nhất">
+          <article class="pillar" style="border-color:rgba(69,163,255,.35)">
+            <h3>1. Deep Models</h3>
+            <p>Học biểu diễn, hiểu ngữ cảnh, sinh văn bản, embedding, reranking, mô hình chuyên miền.</p>
+          </article>
+          <div class="arrow" aria-hidden="true">→</div>
+          <article class="pillar" style="border-color:rgba(94,226,140,.35)">
+            <h3>2. Agentic Loop</h3>
+            <p>Thu thập, làm sạch, gán nhãn, active learning, human-in-the-loop, mở rộng dữ liệu liên tục.</p>
+          </article>
+          <div class="arrow" aria-hidden="true">→</div>
+          <article class="pillar" style="border-color:rgba(255,158,61,.35)">
+            <h3>3. Structural Grammar</h3>
+            <p>Kiểm chứng nghĩa bằng dependency, semantic role, Pregroup, DisCoCat, logic và audit lỗi.</p>
+          </article>
+        </div>
+
+        <div class="unify">
+          <div>
+            <h3>Điểm hội tụ: tiếng Việt số đáng tin cậy</h3>
+            <p>
+              Deep giúp học biểu diễn; Agentic giúp dữ liệu tự cải thiện; Structural giúp kiểm chứng nghĩa.
+              Ba lớp này tạo nền cho NLP, LLM, RAG, ASR/TTS, giáo dục, pháp luật và hành chính số.
+            </p>
+          </div>
+          <div class="badge-big">HỢP NHẤT</div>
+        </div>
+
+        <div style="height:1rem"></div>
+        <div class="pipeline" aria-label="Pipeline đề xuất">
+          <span class="step">Unicode NFC</span><span class="pipe-arrow">→</span>
+          <span class="step">Clean</span><span class="pipe-arrow">→</span>
+          <span class="step">CVNSS4.0 IR</span><span class="pipe-arrow">→</span>
+          <span class="step">CQN/CVNSS Tokenizer</span><span class="pipe-arrow">→</span>
+          <span class="step">POS/NER/Dependency</span><span class="pipe-arrow">→</span>
+          <span class="step">Pregroup/DisCoCat</span><span class="pipe-arrow">→</span>
+          <span class="step">Embedding/RAG</span><span class="pipe-arrow">→</span>
+          <span class="step">Audit</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="wrap">
+        <div class="section-title">
+          <div>
+            <h2>Nguồn tham khảo nên gắn vào bản chính thức</h2>
+            <p>Các liên kết này để người đọc truy vết GitHub/paper/dataset. Khi xuất bản chính thức, nên kiểm tra lại ngày truy cập và phiên bản dataset.</p>
+          </div>
+        </div>
+        <div class="source-grid">
+          <div class="source"><b>VnDT</b><a href="https://github.com/datquocnguyen/VnDT" target="_blank" rel="noopener">github.com/datquocnguyen/VnDT</a></div>
+          <div class="source"><b>UD Vietnamese VTB</b><a href="https://universaldependencies.org/treebanks/vi_vtb/index.html" target="_blank" rel="noopener">universaldependencies.org/treebanks/vi_vtb</a></div>
+          <div class="source"><b>BKTreebank</b><a href="https://aclanthology.org/L18-1341/" target="_blank" rel="noopener">aclanthology.org/L18-1341</a></div>
+          <div class="source"><b>VLSP</b><a href="https://vlsp.org.vn/" target="_blank" rel="noopener">vlsp.org.vn</a></div>
+          <div class="source"><b>VnCoreNLP</b><a href="https://github.com/vncorenlp/VnCoreNLP" target="_blank" rel="noopener">github.com/vncorenlp/VnCoreNLP</a></div>
+          <div class="source"><b>RDRSegmenter</b><a href="https://github.com/datquocnguyen/RDRsegmenter" target="_blank" rel="noopener">github.com/datquocnguyen/RDRsegmenter</a></div>
+          <div class="source"><b>PhoBERT</b><a href="https://github.com/VinAIResearch/PhoBERT" target="_blank" rel="noopener">github.com/VinAIResearch/PhoBERT</a></div>
+          <div class="source"><b>ViT5</b><a href="https://github.com/vietai/ViT5" target="_blank" rel="noopener">github.com/vietai/ViT5</a></div>
+          <div class="source"><b>ViLexNorm</b><a href="https://aclanthology.org/2024.eacl-long.85/" target="_blank" rel="noopener">aclanthology.org/2024.eacl-long.85</a></div>
+          <div class="source"><b>PhoWhisper</b><a href="https://github.com/VinAIResearch/PhoWhisper" target="_blank" rel="noopener">github.com/VinAIResearch/PhoWhisper</a></div>
+          <div class="source"><b>VIVOS</b><a href="https://ailab.hcmus.edu.vn/vivos/" target="_blank" rel="noopener">ailab.hcmus.edu.vn/vivos</a></div>
+          <div class="source"><b>Vietnamese WordNet</b><a href="https://catalogue.elra.info/en-us/repository/browse/ELRA-M0110/" target="_blank" rel="noopener">ELRA-M0110 catalogue</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <strong>Ghi chú:</strong> Giao diện này chạy offline, không dùng thư viện ngoài. Nội dung có thể dùng làm poster web,
+      dashboard giới thiệu, tài liệu chiến lược hoặc trang GitHub Pages cho hạ tầng tiếng Việt số.
+    </div>
+  </footer>
+
+  <script>
+    const layers = [
+      {
+        id:1, group:"data", title:"Corpus thô lớn",
+        role:"Tiền huấn luyện LLM, thống kê từ vựng, embedding.",
+        resources:["Wikipedia tiếng Việt","OSCAR/CC","News corpus","Web crawl sạch"],
+        colors:["#5ee28c","#caffd6"]
+      },
+      {
+        id:2, group:"data", title:"Treebank/Cú pháp",
+        role:"POS, dependency, parser, Pregroup, DisCoCat.",
+        resources:["VnDT","UD Vietnamese VTB","BKTreebank","Dependency gold"],
+        colors:["#42e8e0","#c9fffb"]
+      },
+      {
+        id:3, group:"data", title:"Benchmark VLSP",
+        role:"Đánh giá chuẩn cộng đồng, shared tasks, leaderboards.",
+        resources:["VLSP NER","Sentiment","Dependency","ASR","TTS","Hate speech"],
+        colors:["#ffd34d","#fff2af"]
+      },
+      {
+        id:4, group:"tool", title:"Toolkits",
+        role:"Tách từ, POS, NER, parser, prototype Python/Java.",
+        resources:["VnCoreNLP","RDRSegmenter","PhoNLP","Underthesea","PyVi"],
+        colors:["#45a3ff","#cfe9ff"]
+      },
+      {
+        id:5, group:"model", title:"Mô hình nền",
+        role:"Encoder/decoder/LLM tiếng Việt, embedding, sinh văn bản.",
+        resources:["PhoBERT","ViT5","PhoNLP","Vietnamese LLMs"],
+        colors:["#bf7bff","#ead6ff"]
+      },
+      {
+        id:6, group:"reasoning", title:"QA/NLI/Reasoning",
+        role:"Đọc hiểu, suy luận, kiểm chứng, pháp luật/hành chính.",
+        resources:["UIT-ViQuAD","ViMRC","ViNLI","ViANLI","ViLegalNLI"],
+        colors:["#ff9e3d","#ffe1ba"]
+      },
+      {
+        id:7, group:"reasoning", title:"Social/Noisy text",
+        role:"Chatbot, mạng xã hội, sai dấu, không dấu, teencode.",
+        resources:["ViLexNorm","ViSoLex","Hate speech datasets","UIT-VSFC"],
+        colors:["#ff6fb1","#ffd1e8"]
+      },
+      {
+        id:8, group:"speech", title:"Speech",
+        role:"ASR, TTS, voice agent, ghi biên bản, tổng đài.",
+        resources:["VIVOS","VLSP ASR/TTS","PhoWhisper","VietSuperSpeech","PhoAudiobook"],
+        colors:["#48c7ff","#d2f3ff"]
+      },
+      {
+        id:9, group:"data", title:"Lexicon/Semantic",
+        role:"Từ điển, nghĩa, cảm xúc, ontology, tri thức và di sản.",
+        resources:["Vietnamese WordNet","VietSentiWordNet","Hán-Nôm digital library"],
+        colors:["#f4c36b","#fff1cf"]
+      },
+      {
+        id:10, group:"audit", title:"Audit/IR/Chuẩn hóa",
+        role:"Truy vết, kiểm toán, chống nhiễu, version hóa dữ liệu.",
+        resources:["Unicode NFC","CVNSS4.0","Data card","Model card","Hash","Gold/Silver/Bronze"],
+        colors:["#ff6262","#ffd0d0"]
+      }
+    ];
+
+    const grid = document.getElementById("layerGrid");
+    const searchInput = document.getElementById("searchInput");
+    const filters = Array.from(document.querySelectorAll(".filter"));
+    let activeFilter = "all";
+
+    function escapeHtml(str){
+      return String(str).replace(/[&<>"']/g, s => ({
+        "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;"
+      }[s]));
+    }
+
+    function render(){
+      const q = searchInput.value.trim().toLowerCase();
+      const filtered = layers.filter(layer => {
+        const blob = [layer.title, layer.role, ...layer.resources].join(" ").toLowerCase();
+        const matchQ = !q || blob.includes(q);
+        const matchFilter = activeFilter === "all" || layer.group === activeFilter;
+        return matchQ && matchFilter;
+      });
+
+      grid.innerHTML = filtered.map(layer => `
+        <article class="layer-card" data-group="${escapeHtml(layer.group)}">
+          <div class="layer-head" style="--c1:${layer.colors[0]};--c2:${layer.colors[1]}">
+            <div class="layer-num">${layer.id}</div>
+            <h3>${escapeHtml(layer.title)}</h3>
+          </div>
+          <div class="layer-body">
+            <p class="role">${escapeHtml(layer.role)}</p>
+            <div class="resources">
+              ${layer.resources.map(r => `<span class="resource">${escapeHtml(r)}</span>`).join("")}
+            </div>
+            <button class="open-detail" type="button" onclick="jumpDetail(${layer.id})">Xem phân tích</button>
+          </div>
+        </article>
+      `).join("");
+
+      if(!filtered.length){
+        grid.innerHTML = `<div class="layer-card" style="grid-column:1/-1; min-height:auto; padding:1rem">
+          Không tìm thấy lớp phù hợp. Hãy thử từ khóa khác như “parser”, “PhoBERT”, “speech”, “CVNSS”.
+        </div>`;
+      }
+    }
+
+    function jumpDetail(id){
+      const target = id === 2 ? document.getElementById("detail-treebank") : document.getElementById("details");
+      if(target && target.tagName.toLowerCase() === "details") target.open = true;
+      target.scrollIntoView({behavior:"smooth", block:"start"});
+    }
+
+    filters.forEach(btn => {
+      btn.addEventListener("click", () => {
+        activeFilter = btn.dataset.filter;
+        filters.forEach(b => b.setAttribute("aria-pressed", String(b === btn)));
+        render();
+      });
+    });
+    searchInput.addEventListener("input", render);
+    render();
+  </script>
+</body>
+</html>
